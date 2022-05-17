@@ -65,7 +65,7 @@ class ForgotPassword extends StatelessWidget {
                             children: [
                               Expanded(
                                 flex:6,
-                                child: Stack(
+                                child: Column(
                                   children: [
 
                                     Padding(
