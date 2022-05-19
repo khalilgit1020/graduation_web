@@ -8,7 +8,6 @@ import 'package:my_graduation/bloc/home_cubit.dart';
 import 'package:my_graduation/models/craft_user_model.dart';
 
 import '../../bloc/craft_states.dart';
-import '../../constants.dart';
 import 'chat_details.dart';
 
 /*
@@ -120,7 +119,6 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
 
     return BlocConsumer<CraftHomeCubit, CraftStates>(
       listener: (context, state) {},
@@ -129,43 +127,50 @@ class ChatScreen extends StatelessWidget {
 
         // cubit.getUsersChatList();
 
-        return SafeArea(
-          child: Directionality(
-            textDirection: TextDirection.rtl,
-            child: Scaffold(
-              body: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    cubit.usersMessenger!.isNotEmpty
-                        ? Expanded(
-                      child: FadeIn(
-                        child: ListView.separated(
-                          physics: const BouncingScrollPhysics(),
-                          itemBuilder: (context, index) => buildChatItem(
-                              cubit.usersMessenger![index], context, cubit),
-                          separatorBuilder: (context, index) =>
-                          const Divider(
-                            height: 30,
-                          ),
-                          itemCount: cubit.usersMessenger!.length,
-                        ),
-                      ),
-                    )
-                        : Expanded(
-                      child: FadeIn(
-                        child: const Center(
-                          child: Text(
-                            'لا يوجد لديك مراسلات حتى الأن...',
-                            style:
-                            TextStyle(color: Colors.grey, fontSize: 18),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                const Text(
+                  'المحادثات',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54,
+                  ),
                 ),
-              ),
+                const Divider(
+                  height: 50,
+                ),
+                cubit.usersMessenger!.isNotEmpty
+                    ? Expanded(
+                        child: FadeIn(
+                          child: ListView.separated(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemBuilder: (context, index) => buildChatItem(
+                                cubit.usersMessenger![index], context, cubit),
+                            separatorBuilder: (context, index) => const Divider(
+                              height: 30,
+                            ),
+                            itemCount: cubit.usersMessenger!.length,
+                          ),
+                        ),
+                      )
+                    : Expanded(
+                        child: FadeIn(
+                          child: const Center(
+                            child: Text(
+                              'لا يوجد لديك مراسلات حتى الأن...',
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 18),
+                            ),
+                          ),
+                        ),
+                      ),
+              ],
             ),
           ),
         );

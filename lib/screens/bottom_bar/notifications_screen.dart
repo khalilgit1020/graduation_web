@@ -21,70 +21,59 @@ class NotificationsScreen extends StatelessWidget {
       builder: (context, state) {
         var cubit = CraftHomeCubit.get(context);
 
-        return SafeArea(
-          child: Directionality(
-            textDirection: TextDirection.rtl,
-            child: Scaffold(
-              body: Column(
-                children: [
-                  /*Container(
-                    color: mainColor,
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    height: size.height / 8,
-                    child: const Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        'الاشعارات ',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.start,
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: Column(
+              children: [
+                const Text(
+                  'الإشعارات',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54,
+                  ),
+                ),
+                const Divider(
+                  height: 50,
+                ),
+                Expanded(
+                  child: cubit.notificationPosts!.isNotEmpty
+                      ? SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 8),
+                      child: ListView.separated(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: cubit.notificationPosts!.length,
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(
+                              height: 8,
+                            ),
+                        itemBuilder: (context, index) {
+                          return buildNotification(
+                            context: context,
+                            model: cubit.notificationPosts![index],
+                            user: cubit.notificationUsers![index],
+                            cubit: cubit,
+                          );
+                        },
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),*/
-                  Expanded(
-                    child: cubit.notificationPosts!.isNotEmpty
-                        ? SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 8),
-                        child: ListView.separated(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: cubit.notificationPosts!.length,
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(
-                                height: 8,
-                              ),
-                          itemBuilder: (context, index) {
-                            return buildNotification(
-                              context: context,
-                              model: cubit.notificationPosts![index],
-                              user: cubit.notificationUsers![index],
-                              cubit: cubit,
-                            );
-                          },
-                        ),
-                      ),
-                    )
-                        : const Center(
-                      child: Text(
+                  )
+                      : const Expanded(
+                        child: Center(
+                    child: Text(
                         'لا يوجد لديك إشعارات بعد...',
                         style: TextStyle(
                           fontSize: 20,
                         ),
-                      ),
                     ),
                   ),
-                ],
-              ),
+                      ),
+                ),
+              ],
             ),
-          ),
         );
       },
     );
@@ -98,30 +87,27 @@ class NotificationsScreen extends StatelessWidget {
   }) {
     return Row(
       children: [
-        Expanded(
-          flex: 2,
-          child: InkWell(
-            onTap: () {
-              cubit.getOtherWorkImages(id: user.uId);
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => OtherUserProfile(
-                    userModel: user,
-                  )));
-            },
-            child: CircleAvatar(
-              radius: 25,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(50.0),
-                child: CachedNetworkImage(
-                  height: double.infinity,
-                  width: double.infinity,
-                  imageUrl: user.image!,
-                  placeholder: (context, url) => CircleAvatar(
-                    radius: 25.0,
-                    backgroundColor: Colors.grey[300],
-                  ),
-                  fit: BoxFit.cover,
+        InkWell(
+          onTap: () {
+            cubit.getOtherWorkImages(id: user.uId);
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => OtherUserProfile(
+                  userModel: user,
+                )));
+          },
+          child: CircleAvatar(
+            radius: 25,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50.0),
+              child: CachedNetworkImage(
+                height: double.infinity,
+                width: double.infinity,
+                imageUrl: user.image!,
+                placeholder: (context, url) => CircleAvatar(
+                  radius: 25.0,
+                  backgroundColor: Colors.grey[300],
                 ),
+                fit: BoxFit.cover,
               ),
             ),
           ),

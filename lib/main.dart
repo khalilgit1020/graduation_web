@@ -33,7 +33,7 @@ void main() async {
 
   await CacheHelper.init();
 
-  Widget widget;
+  Widget widget ;
   uId = CacheHelper.getData(key: 'uId');
 
   if (uId != null) {
@@ -66,8 +66,6 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => CraftHomeCubit()
         ..getUserData()
-       // ..getMyWorkImages()
-       // ..getNotifications()
         ..checkIfLocationPermissionAllowed(),
       child: BlocConsumer<CraftHomeCubit, CraftStates>(
         listener: (context, state) {},

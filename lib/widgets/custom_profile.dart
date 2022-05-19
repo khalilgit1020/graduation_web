@@ -120,7 +120,27 @@ Container customProfile ({context,cubit}) =>  Container(
               cubit.UserModel!.userType! ?
               Navigator.of(context).push(
                   MaterialPageRoute(builder:(_)=> const SavedPostsScreen())):
-              dialog(context,'الاشعارات ',const NotificationsScreen());
+              showModalBottomSheet(
+                context: context,
+                builder: (_) => const FractionallySizedBox(
+                  heightFactor: 0.9,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 20),
+                    child: NotificationsScreen(),
+                  ),
+                ),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(25.0),
+                    topLeft: Radius.circular(25.0),
+                  ),
+                ),
+                isScrollControlled: true,
+                constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width * 0.5,
+                  minWidth: MediaQuery.of(context).size.width * 0.5,
+                ),
+              );
 
 
             },

@@ -19,13 +19,10 @@ import 'package:my_graduation/bloc/home_cubit.dart';
       ),
       content:content,
       actions: [
-
-
         ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
             },
-
             child:const Text('الرجوع'))
       ],
     ),

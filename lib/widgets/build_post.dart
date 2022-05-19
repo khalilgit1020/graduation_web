@@ -41,8 +41,6 @@ class BuildPost extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-
-
                       cubit.getOtherPosts(userId: model!.uId!);
                       print( model!.uId!);
                       cubit.getOtherWorkImages(id: model!.uId).then((value) {
@@ -100,10 +98,9 @@ class BuildPost extends StatelessWidget {
               // post text
               InkWell(
                   onTap: () {
-                    cubit.getComments(postId: model!.postId!).then((value) {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => PostScreen(model: model!)));
-                    });
+                    cubit.getComments(postId: model!.postId!);
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => PostScreen(model: model!)));
                     },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
@@ -129,12 +126,9 @@ class BuildPost extends StatelessWidget {
                       flex: 6,
                       child: InkWell(onTap: () {
 
-                        cubit.getComments(postId: model!.postId!).then((value) {
-
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (_) => PostScreen(model: model!)));
-
-                        });
+                        cubit.getComments(postId: model!.postId!);
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => PostScreen(model: model!)));
                       },
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),

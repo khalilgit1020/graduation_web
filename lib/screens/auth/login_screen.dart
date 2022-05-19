@@ -61,7 +61,7 @@ class _CraftLoginScreenState extends State<CraftLoginScreen> {
              // CraftHomeCubit().getNotifications();
              // CraftHomeCubit().getUsersChatList();
               //Navigator.of(context).push(MaterialPageRoute(builder: (_) => MyApp(widget: const HomeScreen())));
-              Navigator.of(context).pushNamed(HomeScreen.route);
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> MyApp(widget: HomeScreen())));
 
             }).catchError((error) {
               print(error.toString());

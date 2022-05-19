@@ -120,9 +120,6 @@ class CraftGetAllUsersMessengerSuccessState extends CraftStates
 
 class CraftGetAllUsersMessengerErrorState extends CraftStates
 {
-  final String error;
-
-  CraftGetAllUsersMessengerErrorState(this.error);
 }
 
 

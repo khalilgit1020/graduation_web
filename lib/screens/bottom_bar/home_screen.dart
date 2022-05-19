@@ -27,35 +27,29 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CraftHomeCubit()
-        ..getUserData()
-        ..getMyWorkImages()
-        ..getNotifications(),
-      child: BlocConsumer<CraftHomeCubit, CraftStates>(
-        listener: (context, state) {
+    return BlocConsumer<CraftHomeCubit, CraftStates>(
+      listener: (context, state) {
 
 
-          if (state is CraftGetLocationErrorState){
-            print(state.error);
-          }
+        if (state is CraftGetLocationErrorState){
+          print(state.error);
+        }
 
-        },
-        builder: (context, state) {
-          var cubit = CraftHomeCubit.get(context);
+      },
+      builder: (context, state) {
+        var cubit = CraftHomeCubit.get(context);
 
-          return  cubit.posts != null && cubit.UserModel != null && cubit.users.isNotEmpty ?
-          SafeArea(
-            child: Directionality(
-              textDirection: TextDirection.rtl,
-              child: Scaffold(
-                backgroundColor: Colors.white,
-                body: FeedScreen(),),
-            ),
-          ) :
-          const Scaffold(body: Center(child: CircularProgressIndicator(),),);
-        },
-      ),
+        return  cubit.posts != null && cubit.UserModel != null && cubit.users.isNotEmpty ?
+        SafeArea(
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: Scaffold(
+              backgroundColor: Colors.white,
+              body: FeedScreen(),),
+          ),
+        ) :
+        const Scaffold(body: Center(child: CircularProgressIndicator(),),);
+      },
     );
   }
 }
