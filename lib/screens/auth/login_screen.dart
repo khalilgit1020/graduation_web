@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,6 @@ import 'package:my_graduation/screens/auth/register_screen.dart';
 import '../../bloc/craft_states.dart';
 import '../../helpers/cache_helper.dart';
 import '../../widgets/show_taost.dart';
-import '../bottom_bar/feed_screen.dart';
 
 class CraftLoginScreen extends StatefulWidget {
   static const String route = '/login';
@@ -60,8 +58,8 @@ class _CraftLoginScreenState extends State<CraftLoginScreen> {
               CraftHomeCubit().getUserData();
              // CraftHomeCubit().getNotifications();
              // CraftHomeCubit().getUsersChatList();
-              //Navigator.of(context).push(MaterialPageRoute(builder: (_) => MyApp(widget: const HomeScreen())));
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> MyApp(widget: HomeScreen())));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => MyApp(widget: const HomeScreen())));
+              //Navigator.of(context).pushNamed(HomeScreen.route);
 
             }).catchError((error) {
               print(error.toString());

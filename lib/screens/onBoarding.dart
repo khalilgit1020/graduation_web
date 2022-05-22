@@ -114,8 +114,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   color: Colors.white,
                   child: InkWell(
                     onTap: (){
-                      //Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CraftLoginScreen()),);
-                      Navigator.of(context).pushNamed(CraftLoginScreen.route);
+                      Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CraftLoginScreen()),);
+                    //  Navigator.of(context).pushNamed(CraftLoginScreen.route);
                     },
                     child: Text('تسجيل الدخول',style: TextStyle(color: mainColor),),
                   ),
@@ -126,8 +126,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               Center(
                 child: InkWell(
                   onTap:() {
-                   // Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CraftRegisterScreen()),);
-                    Navigator.of(context).pushNamed(CraftRegisterScreen.route);
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CraftRegisterScreen()),);
+                  //  Navigator.of(context).pushNamed(CraftRegisterScreen.route);
                   },
                   child:const Text('إنشاء حساب جديد',style: TextStyle(color: Colors.white),),
                 ),

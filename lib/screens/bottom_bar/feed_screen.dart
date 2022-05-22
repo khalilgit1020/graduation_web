@@ -70,6 +70,9 @@ class _FeedScreenState extends State<FeedScreen> {
               body: SingleChildScrollView(
                 child: Column(
                   children: [
+
+
+                    !AppResponsive.isMobile(context) ?
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -123,7 +126,50 @@ class _FeedScreenState extends State<FeedScreen> {
                           ),
                         ),
                       ],
-                    ),
+                    ):
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      child: cubit.posts!.isNotEmpty
+                          ? SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 12),
+                          child: Column(
+                            crossAxisAlignment:
+                            CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              ListView.separated(
+                                reverse: true,
+                                shrinkWrap: true,
+                                physics:
+                                const NeverScrollableScrollPhysics(),
+                                itemCount: cubit.posts!.length,
+                                separatorBuilder:
+                                    (context, index) =>
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                itemBuilder: (context, index) {
+                                  return buildPost(
+                                    context: context,
+                                    model: cubit.posts![index],
+                                    cubit: cubit,
+                                    // userModel: UserModel!,
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                          : const Center(
+                        child: CircularProgressIndicator.adaptive(),
+                      ),
+                    )
+                    ,
                     customFooter(context: context),
                   ],
                 ),

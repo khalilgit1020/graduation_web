@@ -69,15 +69,6 @@ class _NewPostScreenState extends State<NewPostScreen> {
       builder: (context, state) {
         var cubit = CraftHomeCubit.get(context);
 
-/*
-        cubit.checkEmpty(
-          text: textController.text,
-          name: nameController.text,
-          location: locationController.text,
-          salary: salaryController.text,
-        );
-*/
-
 
         return Directionality(
           textDirection: TextDirection.rtl,

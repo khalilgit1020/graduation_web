@@ -37,6 +37,8 @@ class SavedPostsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
 
+
+                    !AppResponsive.isMobile(context) ?
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -81,6 +83,38 @@ class SavedPostsScreen extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ): Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        children: [
+
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30),
+                            height: size.height / 6,
+                            color: mainColor,
+                            child:const  Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'المنشورات المحفوظة',
+                                style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: size.width,
+                            height: size.height,
+                            child: cubit.posts!.isNotEmpty
+                                ? body1(cubit)
+                                :body2(),
+                          ),
+                        ],
+                      ),
                     ),
                     customFooter(context: context),
                   ],

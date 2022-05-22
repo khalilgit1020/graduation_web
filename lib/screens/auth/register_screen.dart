@@ -40,8 +40,8 @@ class CraftRegisterScreen extends StatelessWidget {
               key: 'uId',
               value: state.uid,
             ).then((value){
-             // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>const HomeScreen()));
-              Navigator.of(context).pushNamed(FeedScreen.route);
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>const HomeScreen()));
+             // Navigator.of(context).pushNamed(HomeScreen.route);
             }).catchError((error){
               print(error.toString());
             });
