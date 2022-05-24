@@ -187,7 +187,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                         child: Row(
                                           children: [
                                             SizedBox(
-                                              width: 60,
+                                              width: 65,
                                               child: Row(
                                                 mainAxisAlignment:
                                                 MainAxisAlignment.center,
@@ -210,7 +210,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                             ),
                                             Expanded(
                                               child: SizedBox(
-                                                height: 60,
+                                                height: 65,
                                                 child: TextFormField(
                                                   controller: nameController,
                                                   textAlign: TextAlign.center,
@@ -264,7 +264,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                         child: Row(
                                           children: [
                                             SizedBox(
-                                              width: 60,
+                                              width: 65,
                                               child: Row(
                                                 mainAxisAlignment:
                                                 MainAxisAlignment.center,
@@ -287,7 +287,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                             ),
                                             Expanded(
                                               child: SizedBox(
-                                                height: 60,
+                                                height: 65,
                                                 child: TextFormField(
                                                   controller: locationController,
                                                   textAlign: TextAlign.center,
@@ -344,7 +344,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                         child: Row(
                                           children: [
                                             SizedBox(
-                                              width: 60,
+                                              width: 65,
                                               child: Row(
                                                 mainAxisAlignment:
                                                 MainAxisAlignment.center,
@@ -537,7 +537,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                                   child: Row(
                                                     children: [
                                                       SizedBox(
-                                                        width: 60,
+                                                        width: 65,
                                                         child: Row(
                                                           mainAxisAlignment:
                                                           MainAxisAlignment.center,
@@ -560,7 +560,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                                       ),
                                                       Expanded(
                                                         child: SizedBox(
-                                                          height: 60,
+                                                          height: 65,
                                                           child: TextFormField(
                                                             controller: nameController,
                                                             textAlign: TextAlign.center,
@@ -614,7 +614,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                                   child: Row(
                                                     children: [
                                                       SizedBox(
-                                                        width: 60,
+                                                        width: 65,
                                                         child: Row(
                                                           mainAxisAlignment:
                                                           MainAxisAlignment.center,
@@ -637,7 +637,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                                       ),
                                                       Expanded(
                                                         child: SizedBox(
-                                                          height: 60,
+                                                          height: 65,
                                                           child: TextFormField(
                                                             controller: locationController,
                                                             textAlign: TextAlign.center,
@@ -694,7 +694,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                                                   child: Row(
                                                     children: [
                                                       SizedBox(
-                                                        width: 60,
+                                                        width: 65,
                                                         child: Row(
                                                           mainAxisAlignment:
                                                           MainAxisAlignment.center,

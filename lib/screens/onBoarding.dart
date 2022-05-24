@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:my_graduation/constants.dart';
 import 'package:my_graduation/screens/auth/register_screen.dart';
+import '../app_responsive.dart';
 import '../models/boarding_model.dart';
 import 'auth/login_screen.dart';
 import '../helpers/cache_helper.dart';
@@ -99,12 +100,34 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           appBar: AppBar(
             backgroundColor: mainColor,
             elevation: 0,
-            title:const Text(
-              'Craft Up',
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
+            title:
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    //  Up
+                    TextSpan(
+                      text:'Craft',
+                      style: TextStyle(
+                        fontSize:
+                        AppResponsive.isMobile(context) ?20: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green.withOpacity(0.7),
+                        fontFamily: 'Pacifico',
+                      ),),
+
+                    TextSpan(
+                      text:' Up',
+                      style: TextStyle(
+                        fontSize:
+                        AppResponsive.isMobile(context) ?20: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'Pacifico',
+                      ),),
+                  ],
+                ),
               ),
             ),
             actions: [
@@ -304,6 +327,82 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                       ),
                       const SizedBox(height: 20,),
+
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10),
+                        child: Column(
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  //  Up
+                                  TextSpan(
+                                    text:'Craft',
+                                    style: TextStyle(
+                                      fontSize:
+                                      AppResponsive.isMobile(context) ?20: 32,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.green.withOpacity(0.7),
+                                      fontFamily: 'Pacifico',
+                                    ),),
+
+                                  TextSpan(
+                                    text:' Up',
+                                    style: TextStyle(
+                                      fontSize:
+                                      AppResponsive.isMobile(context) ?20: 32,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontFamily: 'Pacifico',
+                                    ),),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 8,),
+                            Text(
+                              'موقع  يختص بفئة الحرفيين وأصحاب المشغولات اليدوية\n حيث يتم  الإعلان عن الوظائف الشاغرة  واستقطاب الموظفين\n بصورة سهلة وسريعة',
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.8)
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const VerticalDivider(),
+
+                      // contact us
+                      Padding(
+                        padding: const EdgeInsets.only(right: 20.0,top: 40,left: 20,bottom: 20),
+                        child: Column(
+                          children: [
+                            const Text(
+                              'اتصل بنا',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 8,),
+                            Text(
+                              '+972595242216',
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.8)
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            SelectableText(
+                              'khg270991@gmail.com',
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.8)
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
