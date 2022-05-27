@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'my graduation project',
+            title: 'craft up',
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),

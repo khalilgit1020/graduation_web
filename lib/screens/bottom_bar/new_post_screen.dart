@@ -108,6 +108,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
                               Column(
                               children: [
 
+                                const SizedBox(height: 20,),
                                 Container(
                                   width: size.width/1.4,
                                   padding: const EdgeInsets.symmetric(
@@ -450,6 +451,8 @@ class _NewPostScreenState extends State<NewPostScreen> {
                               Column(
                                 children: [
 
+
+                                  const SizedBox(height: 20,),
                                   // for post text field
                                   Center(
                                     child: Container(

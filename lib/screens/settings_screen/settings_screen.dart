@@ -153,7 +153,7 @@ class _SettingsProfileScreenState extends State<SettingsProfileScreen> {
             // for project details
             const ExpansionTile(
               title: Text(
-                'معلومات التطبيق',
+                'معلومات الموقع',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               children: [
@@ -166,7 +166,7 @@ class _SettingsProfileScreenState extends State<SettingsProfileScreen> {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'يمنع استخدام  خدمات التطبيق باي طريقة تخل بقوانين فلسطين , جميع محتويات التطبيق هيحقوق ملكية فكرية محفوظة ويمنع استخدامها باي شكل من أي اطراف اخرى',
+                        'يمنع استخدام  خدمات الموقع باي طريقة تخل بقوانين فلسطين , جميع محتويات الموقع هيحقوق ملكية فكرية محفوظة ويمنع استخدامها باي شكل من أي اطراف اخرى',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -181,21 +181,21 @@ class _SettingsProfileScreenState extends State<SettingsProfileScreen> {
                 ),
                 ExpansionTile(
                   title: Text(
-                    'عن التطبيق',
+                    'عن الموقع',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   children: [
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'تطبيق يختص بفئة الحرفيين وأصحاب المشغولات اليدوية حيث يتم  الإعلان عن الوظائف الشاغرة واستقطاب الموظفين بصورة سهلة وسريعة',
+                        'موقع يختص بفئة الحرفيين وأصحاب المشغولات اليدوية حيث يتم  الإعلان عن الوظائف الشاغرة واستقطاب الموظفين بصورة سهلة وسريعة',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'مميزات التطبيق:\n يمكن استخدامه للإعلان او التقدم لوظيفة مباشرة بشكل مجاني\n يلتزم العضو بعدم مشاركة معلومات عضويته ',
+                        'مميزات الموقع:\n يمكن استخدامه للإعلان او التقدم لوظيفة مباشرة بشكل مجاني\n يلتزم العضو بعدم مشاركة معلومات عضويته ',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
